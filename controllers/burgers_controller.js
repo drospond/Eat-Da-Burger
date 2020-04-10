@@ -8,20 +8,15 @@ router.get("/", function(req, res) {
       var hbsObject = {
         burgers: data
       };
-      console.log(hbsObject);
       res.render("index", hbsObject);
     });
   });
   
-//   router.post("/api/burgers", function(req, res) {
-//     cat.create([
-//       "name", "sleepy"
-//     ], [
-//       req.body.name, req.body.sleepy
-//     ], function(result) {
-//       res.json({ id: result.insertId });
-//     });
-//   });
+  router.post("/api/burgers", function(req, res) {
+    burger.makeBurger(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured], function(result) {
+      res.json({ id: result.insertId });
+    });
+  });
   
 //   router.put("/api/burgers/:id", function(req, res) {
 //     var condition = "id = " + req.params.id;

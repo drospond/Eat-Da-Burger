@@ -18,11 +18,12 @@ $(function() {
       );
     });
   
-    $(".make-burger").on("submit", function(event) {
+    $(".burger-form").on("submit", function(event) {
       event.preventDefault();
   
-      var newBurger = {
-        name: $("#newBurger").val().trim()
+      const newBurger = {
+        burger_name: $("#newBurger").val().trim(),
+        devoured: 0
       };
   
       $.ajax("/api/burgers", {
