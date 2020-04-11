@@ -1,7 +1,6 @@
 $(function() {
     $(".devour").on("click", function(event) {
       var id = $(this).data("id");
-      var  devoured= $(this).data("devoured");
   
       var devourState = {
         eaten: true
@@ -12,7 +11,6 @@ $(function() {
         data: devourState
       }).then(
         function() {
-          console.log("changed sleep to", devoured);
           location.reload();
         }
       );

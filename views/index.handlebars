@@ -1,36 +1,51 @@
-<h1>Burgerz!</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Eat Dab Burger!</h1>
+            <img src="/assets/img/burger3.png" alt="burger" class="mx-auto d-block"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2>Fresh Burgers</h2>
 
-<h2>Fresh Burgers</h2>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <li class="fresh-burger">
+                    {{burger_name}}
+                    <button class="devour btn btn-danger btn-sm" data-id="{{id}}" devourState="{{eaten}}">Devour</button>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col">
+            <h2>Eaten Burgers</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-        <li>
-            {{burger_name}}
-            <button class="devour" data-id="{{id}}" devourState="{{eaten}}">Devour</button>
-        </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <li class="eaten-burger">
+                    {{burger_name}}
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
 
-<h2>Eaten Burgers</h2>
+    <div class="row">
+        <div class="col">
+            <h2>Make a burger</h2>
+            <form class="burger-form">
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-        <li>
-            {{burger_name}}
-        </li>
-    {{/if}}
-  {{/each}}
-</ul>
+                <div class="form-group">
+                    <input type="text" id="newBurger">
+                </div>
 
-<h2>Make a burger</h2>
-<form class="burger-form">
-
-  <div class="form-group">
-    <input type="text" id="newBurger" name="name">
-  </div>
-
-  <button type="submit">Make Burger</button>
-</form>
+                <button type="submit" class="btn btn-success">Make Burger</button>
+            </form>
+        </div>
+    </div>
+</div>
