@@ -11,6 +11,6 @@ In this app, make any burger you can dream of. Only your imagination holds the l
 https://vast-springs-71096.herokuapp.com/
 
 ## Resources
-Free FontAwesome icon: https://fontawesome.com/license
-Bootstrap
-Past Class Activities
+* Free FontAwesome icon: https://fontawesome.com/license
+* Bootstrap
+* Past Class Activities
